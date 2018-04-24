@@ -1,9 +1,9 @@
 
 <table ng-controller="View1Ctrl"><tr><th>Match ID#: </th> <th>Gamertag </th> <th>Kills </th> <th>Deaths </th> <th>Assists </th> </tr>
-<tr ng-repeat="Result in Results">
+<tr ng-repeat="Result in Results" ng-class="(Result.Players[0].TotalKills > Result.Players[0].TotalDeaths) ? ['poskdr']: ['negkdr']">
     <td>{{Result.Id.MatchId}}</td>
     <td>{{Result.Players[0].Player.Gamertag}}</td>
-    <td>{{Result.Players[0].TotalKills}}</td>
+    <td class="killCol">{{Result.Players[0].TotalKills}}</td>
     <td>{{Result.Players[0].TotalDeaths}}</td>
     <td>{{Result.Players[0].TotalAssists}}</td>
 </tr>
